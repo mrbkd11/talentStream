@@ -1,0 +1,32 @@
+<button mat-raised-button color="primary" class="chat-icon" (click)="toggleChatBox()">
+  <mat-icon>chat</mat-icon>
+</button>
+
+<mat-card class="chat-box" *ngIf="isChatBoxVisible">
+  <mat-card-header>
+    <mat-card-title>ChatBot</mat-card-title>
+    <button mat-icon-button (click)="toggleChatBox()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-card-header>
+  <mat-card-content class="chat-logs">
+    
+    <mat-list>
+    <mat-list-item *ngFor="let message of messages" class="message">
+      <h4 mat-line>{{ message.sender }}:</h4>
+      <p mat-line>{{ message.content }}</p>
+    </mat-list-item>
+
+    </mat-list>
+  </mat-card-content>
+  <mat-card-actions>
+    <form class="input-group" (ngSubmit)="sendMessage()">
+      <mat-form-field class="w-100">
+        <input matInput [(ngModel)]="newMessage" name="messageInput" placeholder="Type your message...">
+      </mat-form-field>
+      <button mat-icon-button color="primary" type="submit" aria-label="Send message">
+        <mat-icon>send</mat-icon>
+      </button>
+    </form>
+  </mat-card-actions>
+</mat-card>

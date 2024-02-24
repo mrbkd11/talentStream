@@ -1,0 +1,25 @@
+<div class="file-drop-area" matRipple  (dragover)="onDragOver($event)"
+  (dragleave)="onDragLeave($event)">
+  <span class="fake-btn">Choose files</span>
+  <span class="file-msg">or drag and drop files here</span>
+<input type="file" (change)="fileBrowseHandler($event)" multiple>
+</div>
+
+<div class="file-preview" *ngFor="let file of files; let i = index">
+  <mat-card class="file-box">
+    <mat-card-content>
+      <p>{{ file.name }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-icon-button color="warn" (click)="removeFile(i)">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
+<!-- Add this button for file submission -->
+<div class="submit-button">
+  <button mat-raised-button color="primary" (click)="submitFiles()">Submit Files</button>
+</div>

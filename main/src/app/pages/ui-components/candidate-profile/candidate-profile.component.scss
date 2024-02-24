@@ -1,0 +1,51 @@
+.profile-card {
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.profile-image {
+    background-image: url('/path/to/default/avatar/image.jpg'); // Placeholder image
+    background-size: cover;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+mat-card-title {
+    font-size: 1.2em;
+    margin-left: 8px;
+}
+
+mat-card-subtitle {
+    margin-left: 8px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.bio {
+    margin-top: 16px;
+    font-style: italic;
+}
+
+mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+::ng-deep .mat-card-header-text {
+    margin: 0;
+}
+
+::ng-deep .mat-card-image {
+    height: auto;
+    max-height: 200px;
+    width: 100%;
+}
+.profile-card {
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.profile-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
